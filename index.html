@@ -34,41 +34,6 @@
 </header>
 <main>
     <section class="map-overview">
-        <h2>Infrastructure Services Overview</h2>
-        <div class="region-grid">
-            <div class="region-card operational">
-                <h3>Tenant Management Service</h3>
-                <div class="region-details">
-                    <div class="status operational">🟢 Operational</div>
-                    <div class="providers">
-                        <div class="provider">AWS (US-East-1)</div>
-                        <div class="provider">GCP (us-central1)</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="region-card warning">
-                <h3>Management Server</h3>
-                <div class="region-details">
-                    <div class="status warning">🟡 Degraded</div>
-                    <div class="providers">
-                        <div class="provider">AWS (EU-West-2)</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="region-card critical">
-                <h3>Teleport</h3>
-                <div class="region-details">
-                    <div class="status operational">🟢 Operational</div>
-                    <div class="providers">
-                        <div class="provider">AWS (ap-southeast-1)</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="map-overview">
         <h2>Global Overview Map</h2>
         <div class="region-grid">
             <div class="region-card operational">
@@ -134,88 +99,123 @@
         </div>
     </section>
 
-    <section class="app-status">
-        <h2>Monolithic Application Status</h2>
-        <div class="region-panel">
-            <h3>AWS (US-East-1)</h3>
-            <div class="status healthy">🟢 Healthy</div>
-            <div class="metrics">
-                <span>CPU: <span class="value">65%</span></span>
-                <span>Mem: <span class="value">78%</span></span>
-                <span>Latency: <span class="value">120ms</span></span>
-                <span>Errors: <span class="value">0.1%</span></span>
-                <span>Instances: <span class="value">15</span></span>
+    <div class="status-columns">
+        <section class="infrastructure-services">
+            <h2>Infrastructure Services Overview</h2>
+            <div class="region-grid">
+                <div class="region-card operational">
+                    <h3>Tenant Management Service</h3>
+                    <div class="region-details">
+                        <div class="status operational">🟢 Operational</div>
+                        <div class="providers">
+                            <div class="provider">AWS (US-East-1)</div>
+                            <div class="provider">GCP (us-central1)</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="region-card warning">
+                    <h3>Management Server</h3>
+                    <div class="region-details">
+                        <div class="status warning">🟡 Degraded</div>
+                        <div class="providers">
+                            <div class="provider">AWS (EU-West-2)</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="region-card critical">
+                    <h3>Teleport</h3>
+                    <div class="region-details">
+                        <div class="status operational">🟢 Operational</div>
+                        <div class="providers">
+                            <div class="provider">AWS (ap-southeast-1)</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="actions">[View Logs] [Scale]</div>
-        </div>
-        <div class="region-panel">
-            <h3>AWS (EU-West-2)</h3>
-            <div class="status warning">🟡 Degraded</div>
-            <div class="metrics">
-                <span>CPU: <span class="value">92%</span></span>
-                <span>Mem: <span class="value">85%</span></span>
-                <span>Latency: <span class="value">350ms</span></span>
-                <span>Errors: <span class="value">2.5%</span></span>
-                <span>Instances: <span class="value">10</span></span>
-            </div>
-            <div class="actions">[View Logs] [Scale]</div>
-        </div>
-        <div class="region-panel">
-            <h3>GCP (us-central1)</h3>
-            <div class="status healthy">🟢 Healthy</div>
-            <div class="metrics">
-                <span>CPU: <span class="value">55%</span></span>
-                <span>Mem: <span class="value">68%</span></span>
-                <span>Latency: <span class="value">100ms</span></span>
-                <span>Errors: <span class="value">0.05%</span></span>
-                <span>Instances: <span class="value">12</span></span>
-            </div>
-            <div class="actions">[View Logs] [Scale]</div>
-        </div>
-    </section>
+        </section>
 
-    <section class="service-status">
-        <h2>Multitenant Services Status</h2>
-        <div class="service-panel">
-            <h3>Workflow Designer</h3>
-            <div class="status healthy">🟢 Operational</div>
-            <div class="metrics">
-                <span>Throughput: <span class="value">12k req/s</span></span>
-                <span>Latency: <span class="value">50ms</span></span>
-                <span>Errors: <span class="value">0.01%</span></span>
-                <span>SLO Compliance <span class="value">99%</span></span>
-
+        <section class="app-status">
+            <h2>Monolithic Application Status</h2>
+            <div class="region-panel">
+                <h3>AWS (US-East-1)</h3>
+                <div class="status healthy">🟢 Healthy</div>
+                <div class="metrics">
+                    <span>CPU: <span class="value">65%</span></span>
+                    <span>Mem: <span class="value">78%</span></span>
+                    <span>Latency: <span class="value">120ms</span></span>
+                    <span>Errors: <span class="value">0.1%</span></span>
+                    <span>Instances: <span class="value">15</span></span>
+                </div>
+                <div class="actions">[View Logs] [Scale]</div>
             </div>
-            <div class="tenant-status">[Tenant Status Visual]</div>
-            <div class="actions">[View Logs] [Tenant Metrics]</div>
-        </div>
-        <div class="service-panel">
-            <h3>Messaging</h3>
-            <div class="status warning">🟡 Warning</div>
-            <div class="metrics">
-                <span>Throughput: <span class="value">5k req/s</span></span>
-                <span>Latency: <span class="value">200ms</span></span>
-                <span>Errors: <span class="value">1.5%</span></span>
-                <span>SLO Compliance <span class="value">97%</span></span>
-
+            <div class="region-panel">
+                <h3>AWS (EU-West-2)</h3>
+                <div class="status warning">🟡 Degraded</div>
+                <div class="metrics">
+                    <span>CPU: <span class="value">92%</span></span>
+                    <span>Mem: <span class="value">85%</span></span>
+                    <span>Latency: <span class="value">350ms</span></span>
+                    <span>Errors: <span class="value">2.5%</span></span>
+                    <span>Instances: <span class="value">10</span></span>
+                </div>
+                <div class="actions">[View Logs] [Scale]</div>
             </div>
-            <div class="tenant-status">[Tenant Status Visual]</div>
-            <div class="actions">[View Logs] [Tenant Metrics]</div>
-        </div>
-        <div class="service-panel">
-            <h3>IAM</h3>
-            <div class="status critical">🔴 Critical</div>
-            <div class="metrics">
-                <span>Throughput: <span class="value">5k req/s</span></span>
-                <span>Latency: <span class="value">200ms</span></span>
-                <span>Errors: <span class="value">1.5%</span></span>
-                <span>SLO Compliance <span class="value">97%</span></span>
-
+            <div class="region-panel">
+                <h3>GCP (us-central1)</h3>
+                <div class="status healthy">🟢 Healthy</div>
+                <div class="metrics">
+                    <span>CPU: <span class="value">55%</span></span>
+                    <span>Mem: <span class="value">68%</span></span>
+                    <span>Latency: <span class="value">100ms</span></span>
+                    <span>Errors: <span class="value">0.05%</span></span>
+                    <span>Instances: <span class="value">12</span></span>
+                </div>
+                <div class="actions">[View Logs] [Scale]</div>
             </div>
-            <div class="tenant-status">[Tenant Status Visual]</div>
-            <div class="actions">[View Logs] [Tenant Metrics]</div>
-        </div>
-    </section>
+        </section>
+
+        <section class="service-status">
+            <h2>Multitenant Services Status</h2>
+            <div class="service-panel">
+                <h3>Workflow Designer</h3>
+                <div class="status healthy">🟢 Operational</div>
+                <div class="metrics">
+                    <span>Throughput: <span class="value">12k req/s</span></span>
+                    <span>Latency: <span class="value">50ms</span></span>
+                    <span>Errors: <span class="value">0.01%</span></span>
+                    <span>SLO Compliance <span class="value">99%</span></span>
+                </div>
+                <div class="tenant-status">[Tenant Status Visual]</div>
+                <div class="actions">[View Logs] [Tenant Metrics]</div>
+            </div>
+            <div class="service-panel">
+                <h3>Messaging</h3>
+                <div class="status warning">🟡 Warning</div>
+                <div class="metrics">
+                    <span>Throughput: <span class="value">5k req/s</span></span>
+                    <span>Latency: <span class="value">200ms</span></span>
+                    <span>Errors: <span class="value">1.5%</span></span>
+                    <span>SLO Compliance <span class="value">97%</span></span>
+                </div>
+                <div class="tenant-status">[Tenant Status Visual]</div>
+                <div class="actions">[View Logs] [Tenant Metrics]</div>
+            </div>
+            <div class="service-panel">
+                <h3>IAM</h3>
+                <div class="status critical">🔴 Critical</div>
+                <div class="metrics">
+                    <span>Throughput: <span class="value">5k req/s</span></span>
+                    <span>Latency: <span class="value">200ms</span></span>
+                    <span>Errors: <span class="value">1.5%</span></span>
+                    <span>SLO Compliance <span class="value">97%</span></span>
+                </div>
+                <div class="tenant-status">[Tenant Status Visual]</div>
+                <div class="actions">[View Logs] [Tenant Metrics]</div>
+            </div>
+        </section>
+    </div>
 
     <section class="alerts-panel">
         <h2>Active Alerts</h2>
